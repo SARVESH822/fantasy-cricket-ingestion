@@ -57,7 +57,6 @@ print("\nAll JSON files downloaded.")
 
 # Upload to Kaggle
 os.system(
-    'kaggle datasets version -p raw_data -m "Automatic update"'
+    'kaggle datasets version -p raw_data --dir-mode zip -m "Automatic update"'
 )
-
 print("\nKaggle dataset updated.")
