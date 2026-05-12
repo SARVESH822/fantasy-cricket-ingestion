@@ -9,11 +9,10 @@ leagues = {
     "bbl": "https://cricsheet.org/downloads/bbl_json.zip",
     "psl": "https://cricsheet.org/downloads/psl_json.zip",
     "cpl": "https://cricsheet.org/downloads/cpl_json.zip",
-    "sa20": "https://cricsheet.org/downloads/sa20_json.zip",
-    "ilt20": "https://cricsheet.org/downloads/ilt20_json.zip",
     "lpl": "https://cricsheet.org/downloads/lpl_json.zip",
     "bpl": "https://cricsheet.org/downloads/bpl_json.zip"
 }
+
 
 # Create raw_data folder
 os.makedirs("raw_data", exist_ok=True)
