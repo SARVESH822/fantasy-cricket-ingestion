@@ -12,16 +12,17 @@ leagues = {
     "cpl": "https://cricsheet.org/downloads/cpl_json.zip",
     "lpl": "https://cricsheet.org/downloads/lpl_json.zip",
     "bpl": "https://cricsheet.org/downloads/bpl_json.zip",
-    "sa20": "https://cricsheet.org/downloads/sa20_json.zip",
-    "ilt20": "https://cricsheet.org/downloads/ilt20_json.zip",
 
-    # Domestic T20
+    # International
+    "t20i": "https://cricsheet.org/downloads/t20s_json.zip",
+
+    # Domestic
     "smat": "https://cricsheet.org/downloads/smat_json.zip",
-    "blast": "https://cricsheet.org/downloads/t20blast_json.zip",
 
-    # International T20
-    "t20i": "https://cricsheet.org/downloads/t20is_json.zip"
+    # England T20 Blast
+    "blast": "https://cricsheet.org/downloads/vitalityblast_json.zip"
 }
+
 
 # Create folders
 os.makedirs("raw_data", exist_ok=True)
