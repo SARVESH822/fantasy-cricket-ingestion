@@ -5,46 +5,27 @@ import shutil
 
 leagues = {
 
-    # IPL
     "ipl": "https://cricsheet.org/downloads/ipl_json.zip",
-
-    # Big Bash League
     "bbl": "https://cricsheet.org/downloads/bbl_json.zip",
-
-    # Pakistan Super League
     "psl": "https://cricsheet.org/downloads/psl_json.zip",
-
-    # Caribbean Premier League
     "cpl": "https://cricsheet.org/downloads/cpl_json.zip",
-
-    # Bangladesh Premier League
     "bpl": "https://cricsheet.org/downloads/bpl_json.zip",
-
-    # Lanka Premier League
     "lpl": "https://cricsheet.org/downloads/lpl_json.zip",
 
-    # Vitality Blast (England)
-    "blast": "https://cricsheet.org/downloads/vitalityblast_json.zip",
+    "blast": "https://cricsheet.org/downloads/t20blast_male_json.zip",
 
-    # Syed Mushtaq Ali Trophy
     "smat": "https://cricsheet.org/downloads/sma_male_json.zip",
 
-    # International T20s
     "t20i": "https://cricsheet.org/downloads/t20s_json.zip",
 
-    # SA20
     "sa20": "https://cricsheet.org/downloads/sa20_male_json.zip",
 
-    # ILT20
     "ilt20": "https://cricsheet.org/downloads/ilt20_male_json.zip",
 
-    # The Hundred
     "hundred": "https://cricsheet.org/downloads/hundred_male_json.zip",
 
-    # Super Smash (New Zealand)
     "supersmash": "https://cricsheet.org/downloads/super_smash_male_json.zip",
 
-    # T10 leagues
     "abu_dhabi_t10": "https://cricsheet.org/downloads/abt10_male_json.zip"
 }
 # Create folders
