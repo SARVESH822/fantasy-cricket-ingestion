@@ -15,14 +15,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install Python Libraries
+      - name: Install Libraries
         run: pip install kaggle requests
 
-      - name: Setup Kaggle Credentials
+      - name: Setup Kaggle API
         run: |
           mkdir -p ~/.kaggle
           echo '{"username":"${{ secrets.KAGGLE_USERNAME }}","key":"${{ secrets.KAGGLE_KEY }}"}' > ~/.kaggle/kaggle.json
           chmod 600 ~/.kaggle/kaggle.json
 
-      - name: Run Data Download Script
+      - name: Run Script
         run: python download_data.py
