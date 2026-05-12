@@ -17,12 +17,13 @@ jobs:
 
       - name: Install Libraries
         run: pip install kaggle requests
-
+      
       - name: Setup Kaggle API
         run: |
           mkdir -p ~/.kaggle
-          echo '{"username":"${{ secrets.KAGGLE_USERNAME }}","key":"${{ secrets.KAGGLE_KEY }}"}' > ~/.kaggle/kaggle.json
-          chmod 600 ~/.kaggle/kaggle.json
+          echo "${{ secrets.KAGGLE_API_TOKEN }}" > ~/.kaggle/access_token
+          chmod 600 ~/.kaggle/access_token
+
 
       - name: Run Script
         run: python download_data.py
