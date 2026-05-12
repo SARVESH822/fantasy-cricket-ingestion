@@ -43,11 +43,18 @@ for league, url in leagues.items():
     with open(zip_name, "wb") as f:
         f.write(response.content)
 
-    # Extract ZIP
-    extract_folder = f"temp_{league}"
-
-    with zipfile.ZipFile(zip_name, "r") as zip_ref:
-        zip_ref.extractall(extract_folder)
+        # Extract ZIP safely
+        if zipfile.is_zipfile(zip_name):
+        
+            with zipfile.ZipFile(zip_name, "r") as zip_ref:
+                zip_ref.extractall(extract_folder)
+        
+            print(f"{league} ZIP extracted.")
+        
+        else:
+        
+            print(f"Invalid ZIP for {league}. Skipping.")
+            continue
 
     # Destination
     destination = os.path.join("raw_data", league)
