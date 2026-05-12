@@ -3,14 +3,24 @@ import zipfile
 import os
 import shutil
 
-# League URLs
 leagues = {
+
+    # Franchise leagues
     "ipl": "https://cricsheet.org/downloads/ipl_json.zip",
     "bbl": "https://cricsheet.org/downloads/bbl_json.zip",
     "psl": "https://cricsheet.org/downloads/psl_json.zip",
     "cpl": "https://cricsheet.org/downloads/cpl_json.zip",
     "lpl": "https://cricsheet.org/downloads/lpl_json.zip",
-    "bpl": "https://cricsheet.org/downloads/bpl_json.zip"
+    "bpl": "https://cricsheet.org/downloads/bpl_json.zip",
+    "sa20": "https://cricsheet.org/downloads/sa20_json.zip",
+    "ilt20": "https://cricsheet.org/downloads/ilt20_json.zip",
+
+    # Domestic T20
+    "smat": "https://cricsheet.org/downloads/smat_json.zip",
+    "blast": "https://cricsheet.org/downloads/t20blast_json.zip",
+
+    # International T20
+    "t20i": "https://cricsheet.org/downloads/t20is_json.zip"
 }
 
 # Create folders
