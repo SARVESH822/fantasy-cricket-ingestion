@@ -3,7 +3,7 @@ import zipfile
 import os
 import shutil
 
-# Cricsheet league ZIP URLs
+# League URLs
 leagues = {
     "ipl": "https://cricsheet.org/downloads/ipl_json.zip",
     "bbl": "https://cricsheet.org/downloads/bbl_json.zip",
@@ -13,59 +13,51 @@ leagues = {
     "bpl": "https://cricsheet.org/downloads/bpl_json.zip"
 }
 
-
-# Create raw_data folder
+# Create folders
 os.makedirs("raw_data", exist_ok=True)
 
 for league, url in leagues.items():
 
-    print(f"\nDownloading {league} data...")
+    print(f"\nDownloading {league}...")
 
     zip_name = f"{league}.zip"
 
-    # Download ZIP file
+    # Download ZIP
     response = requests.get(url)
 
     with open(zip_name, "wb") as f:
         f.write(response.content)
 
-    print(f"{league} ZIP downloaded.")
-
-    # Temporary extraction folder
+    # Extract ZIP
     extract_folder = f"temp_{league}"
 
-    # Extract ZIP
     with zipfile.ZipFile(zip_name, "r") as zip_ref:
         zip_ref.extractall(extract_folder)
 
-    print(f"{league} ZIP extracted.")
-
-    # Destination folder
+    # Destination
     destination = os.path.join("raw_data", league)
 
     os.makedirs(destination, exist_ok=True)
 
-    # Copy JSON files
+    # Copy JSONs
     for file in os.listdir(extract_folder):
 
         if file.endswith(".json"):
 
-            src = os.path.join(extract_folder, file)
-            dst = os.path.join(destination, file)
-
-            shutil.copy(src, dst)
-
-    print(f"{league} JSON files copied.")
+            shutil.copy(
+                os.path.join(extract_folder, file),
+                os.path.join(destination, file)
+            )
 
     # Cleanup
     os.remove(zip_name)
     shutil.rmtree(extract_folder)
 
-print("\nAll downloads completed.")
+print("\nAll JSON files downloaded.")
 
-# Upload new Kaggle dataset version
+# Upload to Kaggle
 os.system(
-    'kaggle datasets version -p raw_data -m "Automatic daily Cricsheet update"'
+    'kaggle datasets version -p raw_data -m "Automatic update"'
 )
 
 print("\nKaggle dataset updated.")
