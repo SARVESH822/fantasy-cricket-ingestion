@@ -65,7 +65,7 @@ print("\nAll downloads completed.")
 
 # Upload new Kaggle dataset version
 os.system(
-    'kaggle datasets version -p . -m "Automatic daily Cricsheet update"'
+    'kaggle datasets version -p raw_data -m "Automatic daily Cricsheet update"'
 )
 
 print("\nKaggle dataset updated.")
