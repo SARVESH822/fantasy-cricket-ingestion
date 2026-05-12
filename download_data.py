@@ -1,4 +1,3 @@
-```python
 import requests
 import zipfile
 import os
@@ -71,4 +70,3 @@ os.system(
 )
 
 print("\nKaggle dataset updated.")
-```
